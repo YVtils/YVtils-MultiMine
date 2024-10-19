@@ -1,0 +1,8 @@
+name: YVtils-MM
+version: '1.0.0'
+main: yv.tils.mm.YVtils
+api-version: '1.19'
+authors: [ WolfiiYV ]
+description: Timber and VeinMine in one Plugin
+website: https://yvtils.net
+prefix: YVtils-MM

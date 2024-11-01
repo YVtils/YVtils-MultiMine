@@ -70,10 +70,11 @@ class MultiMineHandler {
 
         brokenMap[player.uniqueId] = brokenMap[player.uniqueId]!! + 1
 
-        for (i in -1..1) {
-            for (j in -1..1) {
-                for (k in -1..1) {
-                    val newLoc = Location(loc.world, loc.x + i, loc.y + j, loc.z + k)
+        for (x in -1..1) {
+            for (y in -1..1) {
+                for (z in -1..1) {
+                    if (x == 0 && y == 0 && z == 0) continue
+                    val newLoc = Location(loc.world, loc.x + x, loc.y + y, loc.z + z)
                     val newBlock = newLoc.block
 
                     if (checkBlock(newBlock.type, blocks) && checkTool(newBlock, item)) {

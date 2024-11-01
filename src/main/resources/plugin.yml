@@ -1,13 +1,13 @@
 name: YVtils-MM
-version: 1.0.0
+version: 1.0.2
 main: yv.tils.mm.YVtils
 author: WolfiiYV
 api-version: "1.19"
 website: https://yvtils.net/yvtils/mm
 prefix: YVtils-MM
 libraries:
-  - "dev.jorel:commandapi-bukkit-shade-mojang-mapped:9.5.3"
-  - "dev.jorel:commandapi-bukkit-kotlin:9.5.3"
+  - "dev.jorel:commandapi-bukkit-shade-mojang-mapped:9.6.1"
+  - "dev.jorel:commandapi-bukkit-kotlin:9.6.1"
 permissions:
   yvtils.smp.multiMine:
     description: Allows the player to mine multiple blocks at once

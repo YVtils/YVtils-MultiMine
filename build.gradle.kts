@@ -4,18 +4,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     application
 
-    kotlin("jvm") version "2.0.20"
-    kotlin("plugin.serialization") version "2.0.20"
+    kotlin("jvm") version "2.0.21"
+    kotlin("plugin.serialization") version "2.0.21"
 
     id("com.github.johnrengelman.shadow") version "8.1.1"
 
-    id("io.papermc.paperweight.userdev") version "1.7.3"
+    id("io.papermc.paperweight.userdev") version "1.7.4"
 
     id("xyz.jpenilla.run-paper") version "2.3.1"
 }
 
 group = "yv.tils"
-version = "1.0.0"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -24,10 +24,10 @@ repositories {
 }
 
 dependencies {
-    paperweight.paperDevBundle("1.20-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.3-R0.1-SNAPSHOT")
 
-    implementation("dev.jorel", "commandapi-bukkit-shade", "9.5.3")
-    implementation("dev.jorel", "commandapi-bukkit-kotlin", "9.5.3")
+    implementation("dev.jorel", "commandapi-bukkit-shade-mojang-mapped", "9.6.1")
+    implementation("dev.jorel", "commandapi-bukkit-kotlin", "9.6.1")
 }
 
 tasks {
@@ -49,7 +49,7 @@ tasks {
     }
 
     runServer {
-        minecraftVersion("1.20")
+        minecraftVersion("1.20.6")
     }
 }
 
@@ -59,4 +59,12 @@ tasks.withType<KotlinCompile> {
 
 application {
     mainClass.set("YVtils")
+}
+
+tasks.shadowJar {
+    archiveBaseName.set("YVtils-MM")
+    archiveVersion.set(version.toString())
+    archiveClassifier.set("")
+
+    archiveFileName.set("YVtils-MM_v${version}.jar")
 }

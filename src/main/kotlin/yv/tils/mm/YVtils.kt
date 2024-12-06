@@ -2,15 +2,14 @@ package yv.tils.mm
 
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIBukkitConfig
-import org.bukkit.Bukkit
 import org.bukkit.NamespacedKey
 import org.bukkit.plugin.java.JavaPlugin
 import yv.tils.mm.manager.startup.Configs
-import yv.tils.mm.utils.configs.language.Language
-import yv.tils.mm.utils.logger.Debugger
 import yv.tils.mm.utils.configs.language.LangStrings
+import yv.tils.mm.utils.configs.language.Language
 import yv.tils.mm.utils.internalAPI.Placeholder
 import yv.tils.mm.utils.internalAPI.Vars
+import yv.tils.mm.utils.logger.Debugger
 
 class YVtils : JavaPlugin() {
     companion object {
@@ -18,7 +17,7 @@ class YVtils : JavaPlugin() {
         lateinit var key: NamespacedKey
     }
 
-    val pluginVersion = "1.0.2"
+    val yvtilsVersion = pluginMeta.version
 
     override fun onLoad() {
         instance = this
@@ -62,6 +61,21 @@ class YVtils : JavaPlugin() {
     }
 
     override fun onDisable() {
+        server.consoleSender.sendMessage(
+            Placeholder().replacer(
+                Language().getMessage(LangStrings.STOP_MESSAGE),
+                listOf("prefix"),
+                listOf(Vars().prefix)
+            )
+        )
+
         yv.tils.mm.manager.shutdown.Summarizer().shutdown()
-    }
+
+        server.consoleSender.sendMessage(
+            Placeholder().replacer(
+                Language().getMessage(LangStrings.STOP_COMPLETED_MESSAGE),
+                listOf("prefix"),
+                listOf(Vars().prefix)
+            )
+        )    }
 }

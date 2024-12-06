@@ -7,6 +7,7 @@ import yv.tils.mm.utils.configs.language.de_yml
 import yv.tils.mm.utils.configs.language.en_yml
 import yv.tils.mm.utils.configs.multiMine.MultiMineConfig
 import yv.tils.mm.utils.configs.multiMine.config_yml_multiMine
+import yv.tils.mm.utils.configs.multiMine.save_yml_multiMine
 
 class Configs {
     fun register() {
@@ -15,6 +16,8 @@ class Configs {
 
         config_yml().strings()
         config_yml_multiMine().strings()
+
+        save_yml_multiMine().strings()
     }
 
     fun load() {

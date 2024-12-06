@@ -1,6 +1,6 @@
 package yv.tils.mm.manager.startup
 
-import yv.tils.mm.mods.multiMine.BlockManage
+import yv.tils.mm.mods.multiMine.MultiMineCommand
 
 class Commands {
     fun registerCommands() {
@@ -8,6 +8,6 @@ class Commands {
     }
 
     private fun modulesCommands() {
-        BlockManage()
+        MultiMineCommand()
     }
 }

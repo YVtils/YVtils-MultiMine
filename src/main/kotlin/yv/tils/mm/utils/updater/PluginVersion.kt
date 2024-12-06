@@ -107,4 +107,10 @@ class PluginVersion {
             YVtils.instance.logger.warning("Update Check Error: ${e.message}")
         }
     }
+
+    fun asyncUpdateChecker() {
+        Bukkit.getScheduler().runTaskTimerAsynchronously(YVtils.instance, Runnable {
+            webRequest()
+        }, 0, 3600 * 20)
+    }
 }

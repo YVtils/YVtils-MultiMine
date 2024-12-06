@@ -58,7 +58,7 @@ class Debugger {
     private fun firstPrint() {
         log = log.plus("\n----- INCLUDE IN REPORTS -----\n")
         log = log.plus("Plugin: YVtils-MM\n")
-        log = log.plus("Plugin Version: ${plugin.pluginVersion}\n")
+        log = log.plus("Plugin Version: ${plugin.yvtilsVersion}\n")
         log = log.plus("Server Version: ${Bukkit.getVersion()}\n")
         log = log.plus("Server Software: ${Bukkit.getName()}\n")
         log = log.plus("----- INCLUDE IN REPORTS -----\n")

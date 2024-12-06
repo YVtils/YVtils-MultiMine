@@ -98,6 +98,16 @@ class en_yml {
             "<white>The block <yellow><block> <white>is not in the list!"
         )
 
+        ymlFile.addDefault(
+            "MODULE_MULTIMINE_TOGGLE_ACTIVATE",
+            "<white>MultiMine is now <yellow>activated<white>!"
+        )
+
+        ymlFile.addDefault(
+            "MODULE_MULTIMINE_TOGGLE_DEACTIVATE",
+            "<white>MultiMine is now <yellow>deactivated<white>!"
+        )
+
         ymlFile.options().copyDefaults(true)
         ymlFile.save(file)
     }

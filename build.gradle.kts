@@ -2,15 +2,15 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.1.21"
-    kotlin("plugin.serialization") version "2.1.21"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.papermc.paperweight.userdev") version "2.0.0-beta.16"
+    kotlin("jvm") version "2.2.0"
+    kotlin("plugin.serialization") version "2.2.0"
+    id("com.gradleup.shadow") version "9.0.0-beta17"
+    id("io.papermc.paperweight.userdev") version "2.0.0-beta.17"
     id("xyz.jpenilla.run-paper") version "2.3.1"
 }
 
-val yvtilsVersion = "1.1.2"
-val commandAPIVersion = "10.0.1"
+val yvtilsVersion = "1.1.4"
+val commandAPIVersion = "10.1.0"
 
 group = "yv.tils"
 version = yvtilsVersion

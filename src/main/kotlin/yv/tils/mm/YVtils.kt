@@ -21,7 +21,7 @@ class YVtils : JavaPlugin() {
 
     override fun onLoad() {
         instance = this
-        CommandAPI.onLoad(CommandAPIBukkitConfig(instance).silentLogs(true).verboseOutput(false))
+        CommandAPI.onLoad(CommandAPIBukkitConfig(instance).silentLogs(true).verboseOutput(false).setNamespace("yvtils").beLenientForMinorVersions(true))
         key = NamespacedKey(this, "yvtils")
 
         val configs = Configs()
